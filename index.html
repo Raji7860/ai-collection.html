@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AICollection</title>
+    
+    <style>
+      /* استایل‌دهی برای بدنه صفحه */
+body {
+    font-family: 'Roboto', sans-serif; /* استفاده از فونت Roboto */
+    background: linear-gradient(to bottom, #6a11cb, #2575fc); /* پس‌زمینه ترکیب عمودی از دو رنگ */
+    color: white; /* رنگ متن سفید */
+    margin: 0;
+    padding: 0;
+    text-align: center; /* وسط چین کردن متن‌ها */
+}
+
+
+        /* استایل هدر */
+        header {
+            padding: 30px 0;
+            background-color: rgba(0, 0, 0, 0.6); /* رنگ پس‌زمینه نیمه شفاف */
+            border-bottom: 2px solid #fff; /* خط پایین */
+        }
+
+        /* استایل برای عنوان اصلی سایت */
+        header h1 {
+            font-family: 'Poppins', sans-serif; /* استفاده از فونت Poppins برای عنوان */
+            font-size: 40px;
+            margin: 0;
+        }
+
+        /* استایل برای توضیحات پایین عنوان */
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* استایل برای بخش اصلی که کارت‌های هوش مصنوعی رو شامل میشه */
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; /* برای ریسپانسیو شدن */
+            padding: 30px;
+        }
+
+        /* استایل برای هر کارت هوش مصنوعی */
+        .ai-card {
+            background-color: rgba(255, 255, 255, 0.1); /* پس‌زمینه نیمه شفاف برای کارت‌ها */
+            border-radius: 15px;
+            padding: 20px;
+            width: 250px; /* عرض هر کارت */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* سایه برای کارت */
+            transition: transform 0.3s ease; /* انیمیشن برای تغییرات */
+        }
+
+        /* افکت برای بزرگ شدن کارت هنگام هاور */
+        .ai-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* استایل برای دکمه‌ها */
+        .ai-btn {
+            background-color: #28a745; /* رنگ پس‌زمینه دکمه */
+            color: white; /* رنگ متن دکمه */
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: block;
+            width: 100%; /* دکمه به عرض کامل کارت کشیده می‌شود */
+        }
+
+        /* تغییر رنگ دکمه هنگام هاور */
+        .ai-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>مجموعه هوش‌های مصنوعی</h1> <!-- عنوان سایت -->
+        <p>دسترسی سریع به انواع هوش‌های مصنوعی مختلف</p> <!-- توضیحات کوتاه -->
+    </header>
+
+    <!-- بخش اصلی که شامل دکمه‌های هوش مصنوعی هست -->
+    <div class="container">
+        <!-- دکمه هوش مصنوعی 1 -->
+        <div class="ai-card">
+            <button class="ai-btn" onclick="window.location.href='https://openai.com'">chat gpt</button>
+        </div>
+
+        <!-- دکمه هوش مصنوعی 2 -->
+        <div class="ai-card">
+            <button class="ai-btn" onclick="window.location.href='https://deepmind.com'">DeepMind</button>
+        </div>
+
+        <!-- دکمه هوش مصنوعی 3 -->
+        <div class="ai-card">
+            <button class="ai-btn" onclick="window.location.href='https://compilat.io'">Compilat</button>
+        </div>
+    </div>
+</body>
+</html>
