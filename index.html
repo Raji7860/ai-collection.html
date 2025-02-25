@@ -32,7 +32,7 @@ header {
 
   header h1 {
     font-family: 'Poppins', sans-serif; /* استفاده از فونت پاپینس */
-    font-size: 50px; /* اندازه فونت */
+    font-size: 45px; /* اندازه فونت */
     margin: 0; /* حذف حاشیه */
 }
 
@@ -52,8 +52,9 @@ header p {
             padding: 30px;
         }
 
- .ai-card {
-    background-color: rgba(0, 128, 0, 0.2); /* سبز نیمه‌شفاف */
+/* استایل برای کارت‌های هوش مصنوعی */
+.ai-card {
+    background-color: rgba(255, 255, 255, 0.1); /* پس‌زمینه نیمه‌شفاف برای کارت‌ها */
     border-radius: 15px;
     padding: 20px;
     width: 250px;
@@ -62,9 +63,32 @@ header p {
     transition: transform 0.3s ease;
 }
 
-        .ai-card:hover {
-            transform: scale(1.05);
-        }
+.ai-card:hover {
+    transform: scale(1.05);
+}
+
+/* استایل برای توضیحات */
+.description {
+    display: none;
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0; /* پنهان بودن توضیحات در ابتدا */
+    transition: opacity 0.3s ease-in-out; /* انیمیشن نرم برای نمایان شدن توضیحات */
+}
+
+/* وقتی موس روی کارت می‌رود، توضیحات سریعتر و با تاخیر کمتر نمایان می‌شود */
+.ai-card:hover .description {
+    display: block;
+    opacity: 1; /* توضیحات نمایان می‌شود */
+    transition-delay: 0s; /* حذف تاخیر */
+}
+
 .ai-btn {
     background-color: #2c047c; /* سبز تیره برای دکمه‌ها */
     color: white;
@@ -81,7 +105,7 @@ header p {
 
 /* تغییر رنگ دکمه هنگام هاور */
 .ai-btn:hover {
-    background-color: #1abc9c; /* رنگ سبز تیره‌تر هنگام هاور */
+    background-color: #DAA520; /* رنگ سبز تیره‌تر هنگام هاور */
 }
 
 
@@ -113,8 +137,8 @@ header p {
 <body>
 
     <header>
-        <h1>گالری هوش‌های مصنوعی</h1>
-        <p>دسترسی سریع به انواع هوش‌های مصنوعی مختلف</p>
+        <h1>گالری هوش مصنوعی</h1>
+        <p>با استفاده از این وب‌سایت، تمامی هوش مصنوعی‌ها را بررسی و مقایسه کنید.</p>
     </header>
 
     <div class="container">
