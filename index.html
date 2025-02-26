@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گالری هوش مصنوعی</title>
+    <meta name="description" content="گالری هوش مصنوعی - مجموعه‌ای از بهترین ابزارهای هوش مصنوعی شامل ChatGPT، DeepMind، IBM Watson، Cohere، Google Bard و دیگر تکنولوژی‌های AI.">
+    <meta name="keywords" content="هوش مصنوعی, AI, گالری هوش مصنوعی, AICollection, ChatGPT, DeepMind, IBM Watson, Cohere, Google Bard, Anthropic Claude, Hugging Face">
+    <meta name="author" content="محمدرضا راجی">
+    <meta name="robots" content="index, follow">
+    <title>AICollection - گالری هوش مصنوعی</title>
     <style>
-        /* تنظیم پس‌زمینه کلی صفحه */
         body {
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(to bottom, #6a11cb, #b370ff);
@@ -14,66 +17,38 @@
             padding: 0;
             text-align: center;
         }
-
-        /* استایل هدر */
         header {
             padding: 30px 0;
             background-color: rgba(0, 0, 0, 0.6);
             border-bottom: 2px solid #fff;
         }
-
         header h1 {
             font-family: 'Poppins', sans-serif;
             font-size: 45px;
             margin: 0;
         }
-
         header p {
             font-size: 18px;
             margin-top: 10px;
         }
-
-        /* تنظیمات مربوط به چیدمان کارت‌ها */
         .container {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            flex-wrap: wrap;
             padding: 30px;
+            justify-content: center;
         }
-
-
-
-        .designer-info {
-            position: fixed;
-            bottom: 10px;
-            left: 10px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-        }
-
-
-
-
-        /* استایل کارت‌های AI */
         .ai-card {
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             padding: 20px;
-            width: 250px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
-            position: relative;
+            text-align: center;
         }
-
         .ai-card:hover {
             transform: scale(1.05);
         }
-
-        /* دکمه‌ها */
         .ai-btn {
             background-color: #4B0082;
             color: white;
@@ -85,26 +60,29 @@
             text-decoration: none;
             display: block;
             width: 100%;
-            position: relative;
         }
-
         .ai-btn:hover {
             background-color: #DAA520;
         }
-
-        /* توضیحات، مخفی‌شده در حالت عادی */
         .description {
             font-size: 14px;
             margin-top: 10px;
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
         }
-
-        /* نمایش توضیحات وقتی که موس روی دکمه می‌رود */
         .ai-btn:hover + .description {
             opacity: 1;
         }
-
+        .designer-info {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
@@ -116,38 +94,40 @@
     <div class="container">
         <div class="ai-card">
             <button class="ai-btn" onclick="window.location.href='https://openai.com'">Chat GPT</button>
-            <p class="description">چت‌باتی که می‌تواند مکالمات طبیعی داشته باشد و به سوالات شما پاسخ دهد.</p>
+            <p class="description">چت‌باتی که مکالمات طبیعی دارد و به سوالات شما پاسخ می‌دهد.</p>
         </div>
-
         <div class="ai-card">
             <button class="ai-btn" onclick="window.location.href='https://deepmind.com'">DeepMind</button>
-            <p class="description">یک سیستم هوش مصنوعی قدرتمند برای حل مسائل پیچیده علمی و پزشکی.</p>
+            <p class="description">سیستم هوش مصنوعی برای حل مسائل علمی و پزشکی.</p>
         </div>
-
         <div class="ai-card">
             <button class="ai-btn" onclick="window.location.href='https://compilat.io'">Compilat</button>
             <p class="description">ابزاری برای کمک به برنامه‌نویسان در نوشتن و بهینه‌سازی کدها.</p>
         </div>
-
         <div class="ai-card">
             <button class="ai-btn" onclick="window.location.href='https://www.cohere.ai'">Cohere</button>
-            <p class="description">مدل زبان قدرتمند برای پردازش و تحلیل داده‌های متنی.</p>
+            <p class="description">مدل زبان برای پردازش و تحلیل داده‌های متنی.</p>
         </div>
-
         <div class="ai-card">
             <button class="ai-btn" onclick="window.location.href='https://bard.google.com'">Google Bard</button>
-            <p class="description">یک مدل زبان از گوگل برای پاسخ به سوالات و تولید متن‌های طبیعی.</p>
+            <p class="description">مدل زبان گوگل برای تولید متن‌های طبیعی.</p>
         </div>
-
         <div class="ai-card">
             <button class="ai-btn" onclick="window.location.href='https://www.ibm.com/watson'">IBM Watson</button>
             <p class="description">پلتفرم هوش مصنوعی IBM برای تحلیل داده‌ها و پشتیبانی کسب‌وکارها.</p>
         </div>
-		    <div class="designer-info">
-        <strong>طراح:محمدرضا راجی</strong> 1403/12/8
+        <div class="ai-card">
+            <button class="ai-btn" onclick="window.location.href='https://www.anthropic.com'">Anthropic Claude</button>
+            <p class="description">چت‌بات هوش مصنوعی پیشرفته برای مکالمات طبیعی.</p>
+        </div>
+        <div class="ai-card">
+            <button class="ai-btn" onclick="window.location.href='https://huggingface.co/'">Hugging Face</button>
+            <p class="description">منبعی برای مدل‌های یادگیری ماشین و NLP.</p>
+        </div>
     </div>
 
-		
+    <div class="designer-info">
+        <strong>طراح: محمدرضا راجی</strong> - 1403/12/8
     </div>
 </body>
 </html>
