@@ -3,41 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گالری هوش مصنوعی -  مجموعه‌های هوش مصنوعی</title> <!-- اینجا باید عنوان رو وارد کنی -->
-
+    <title>گالری هوش مصنوعی</title>
     <style>
+        /* تنظیم پس‌زمینه کلی صفحه */
         body {
-            font-family: 'Roboto', sans-serif; /* استفاده از فونت روبوتو */
-            background: linear-gradient(to bottom, #6a11cb, #E6E6FA);
-            color: white; /* رنگ متن سفید */
-            margin: 0; /* حذف حاشیه پیش‌فرض مرورگر */
-            padding: 0; /* حذف فاصله داخلی پیش‌فرض */
-            text-align: center; /* وسط‌چین کردن تمامی متن‌ها */
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #6a11cb, #b370ff);
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
         }
 
-        footer strong {
-            color: red; /* تغییر رنگ نام طراح به مشکی */
-            font-weight: bold; /* پررنگ کردن نام طراح */
-        }
-
+        /* استایل هدر */
         header {
-            padding: 30px 0; /* فاصله داخلی بالا و پایین */
-            background-color: rgba(0, 0, 0, 0.6); /* پس‌زمینه مشکی با شفافیت */
-            border-bottom: 2px solid #fff; /* خط پایین سفید */
+            padding: 30px 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-bottom: 2px solid #fff;
         }
 
         header h1 {
-            font-family: 'Poppins', sans-serif; /* استفاده از فونت پاپینس */
-            font-size: 45px; /* اندازه فونت */
-            margin: 0; /* حذف حاشیه */
+            font-family: 'Poppins', sans-serif;
+            font-size: 45px;
+            margin: 0;
         }
 
         header p {
-            font-size: 18px; /* اندازه فونت برای توضیحات */
-            margin-top: 10px; /* فاصله بالای پاراگراف */
+            font-size: 18px;
+            margin-top: 10px;
         }
 
-        /* استایل برای کارت‌های هوش مصنوعی */
+        /* تنظیمات مربوط به چیدمان کارت‌ها */
         .container {
             display: flex;
             justify-content: center;
@@ -46,153 +42,91 @@
             padding: 30px;
         }
 
-        /* استایل برای کارت‌های هوش مصنوعی */
+        /* استایل کارت‌های AI */
         .ai-card {
-            background-color: rgba(255, 255, 255, 0.1); /* پس‌زمینه نیمه‌شفاف برای کارت‌ها */
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             padding: 20px;
             width: 250px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
             transition: transform 0.3s ease;
+            position: relative;
         }
 
         .ai-card:hover {
             transform: scale(1.05);
         }
 
-        /* استایل برای توضیحات */
-        .description {
-            display: none;
-            position: absolute;
-            bottom: -40px;
-            left: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            opacity: 0; /* پنهان بودن توضیحات در ابتدا */
-            transition: opacity 0.3s ease-in-out; /* انیمیشن نرم برای نمایان شدن توضیحات */
-        }
-
-        /* وقتی موس روی کارت می‌رود، توضیحات سریعتر و با تاخیر کمتر نمایان می‌شود */
-        .ai-card:hover .description {
-            display: block;
-            opacity: 1; /* توضیحات نمایان می‌شود */
-            transition-delay: 0s; /* حذف تاخیر */
-        }
-
+        /* دکمه‌ها */
         .ai-btn {
-            background-color: #2c047c; /* سبز تیره برای دکمه‌ها */
+            background-color: #4B0082;
             color: white;
             padding: 15px 25px;
             font-size: 18px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-bottom: 10px;
             text-decoration: none;
             display: block;
             width: 100%;
+            position: relative;
         }
 
-        /* تغییر رنگ دکمه هنگام هاور */
         .ai-btn:hover {
-            background-color: #DAA520; /* رنگ سبز تیره‌تر هنگام هاور */
+            background-color: #DAA520;
         }
 
-        /* استایل برای متن توضیحات */
+        /* توضیحات، مخفی‌شده در حالت عادی */
         .description {
-            display: none;
-            position: absolute;
-            bottom: -40px;
-            left: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            opacity: 0; /* پنهان کردن توضیحات در ابتدا */
-            transition: opacity 0.5s ease-in-out; /* انیمیشن برای پدیدار شدن */
+            font-size: 14px;
+            margin-top: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
         }
 
-        .ai-card:hover .description {
-            display: block;
-            opacity: 1; /* وقتی موس روی کارت می‌رود، توضیحات نمایان می‌شود */
-            transition-delay: 1s; /* تاخیر در نمایش توضیحات */
+        /* نمایش توضیحات وقتی که موس روی دکمه می‌رود */
+        .ai-btn:hover + .description {
+            opacity: 1;
         }
+
     </style>
 </head>
 <body>
     <header>
         <h1>گالری هوش مصنوعی</h1>
-        <p>با استفاده از این وب‌سایت، تمامی هوش مصنوعی‌ها را بررسی و مقایسه کنید.</p>
+        <p>بهترین ابزارهای هوش مصنوعی را بشناسید و از آن‌ها استفاده کنید!</p>
     </header>
 
     <div class="container">
-        <!-- دکمه هوش مصنوعی 1 -->
         <div class="ai-card">
             <button class="ai-btn" onclick="window.location.href='https://openai.com'">Chat GPT</button>
-            <div class="description">این هوش مصنوعی توانایی پردازش زبان طبیعی را دارد و می‌تواند به سوالات کاربران پاسخ دهد.</div>
+            <p class="description">چت‌باتی که می‌تواند مکالمات طبیعی داشته باشد و به سوالات شما پاسخ دهد.</p>
         </div>
 
-        <!-- دکمه هوش مصنوعی 2 -->
         <div class="ai-card">
             <button class="ai-btn" onclick="window.location.href='https://deepmind.com'">DeepMind</button>
-            <div class="description">این هوش مصنوعی در زمینه یادگیری ماشین و یادگیری عمیق برای حل مسائل پیچیده علمی و پزشکی کاربرد دارد.</div>
+            <p class="description">یک سیستم هوش مصنوعی قدرتمند برای حل مسائل پیچیده علمی و پزشکی.</p>
         </div>
 
-<div class="container">
-    <!-- دکمه هوش مصنوعی 1 -->
-    <div class="ai-card">
-        <button class="ai-btn" onclick="window.location.href='https://openai.com'">Chat GPT</button>
-        <div class="description">این هوش مصنوعی توانایی پردازش زبان طبیعی را دارد و می‌تواند به سوالات کاربران پاسخ دهد.</div>
-    </div>
-
-    <!-- دکمه هوش مصنوعی 2 -->
-    <div class="ai-card">
-        <button class="ai-btn" onclick="window.location.href='https://deepmind.com'">DeepMind</button>
-        <div class="description">این هوش مصنوعی در زمینه یادگیری ماشین و یادگیری عمیق برای حل مسائل پیچیده علمی و پزشکی کاربرد دارد.</div>
-    </div>
-
-    <!-- دکمه هوش مصنوعی 3 -->
-    <div class="ai-card">
-        <button class="ai-btn" onclick="window.location.href='https://compilat.io'">Compilat</button>
-        <div class="description">یک ابزار هوش مصنوعی برای کمک به برنامه‌نویسان در نوشتن و بهینه‌سازی کدها است.</div>
-    </div>
-
-    <!-- دکمه هوش مصنوعی 4 (هوش مصنوعی جدید) -->
-    <div class="ai-card">
-        <button class="ai-btn" onclick="window.location.href='https://www.cohere.ai'">Cohere</button>
-        <div class="description">Cohere یک مدل زبان قدرتمند است که برای پردازش زبان طبیعی و تحلیل داده‌ها طراحی شده است.</div>
-    </div>
-
-    <!-- دکمه هوش مصنوعی 5 (هوش مصنوعی جدید) -->
-    <div class="ai-card">
-        <button class="ai-btn" onclick="window.location.href='https://www.bard.google.com'">Google Bard</button>
-        <div class="description">Bard یک مدل زبان از گوگل است که برای پاسخ به سوالات و تولید متن‌های طبیعی طراحی شده است.</div>
-    </div>
-
-    <!-- دکمه هوش مصنوعی 6 (هوش مصنوعی جدید) -->
-    <div class="ai-card">
-        <button class="ai-btn" onclick="window.location.href='https://www.ibm.com/watson'">IBM Watson</button>
-        <div class="description">Watson یک پلتفرم هوش مصنوعی است که توسط IBM توسعه یافته و به تحلیل داده‌ها و هوش تجاری کمک می‌کند.</div>
-    </div>
-
-</div>
-
-
-        <!-- دکمه هوش مصنوعی 3 -->
         <div class="ai-card">
             <button class="ai-btn" onclick="window.location.href='https://compilat.io'">Compilat</button>
-            <div class="description">یک ابزار هوش مصنوعی برای کمک به برنامه‌نویسان در نوشتن و بهینه‌سازی کدها است.</div>
+            <p class="description">ابزاری برای کمک به برنامه‌نویسان در نوشتن و بهینه‌سازی کدها.</p>
+        </div>
+
+        <div class="ai-card">
+            <button class="ai-btn" onclick="window.location.href='https://www.cohere.ai'">Cohere</button>
+            <p class="description">مدل زبان قدرتمند برای پردازش و تحلیل داده‌های متنی.</p>
+        </div>
+
+        <div class="ai-card">
+            <button class="ai-btn" onclick="window.location.href='https://bard.google.com'">Google Bard</button>
+            <p class="description">یک مدل زبان از گوگل برای پاسخ به سوالات و تولید متن‌های طبیعی.</p>
+        </div>
+
+        <div class="ai-card">
+            <button class="ai-btn" onclick="window.location.href='https://www.ibm.com/watson'">IBM Watson</button>
+            <p class="description">پلتفرم هوش مصنوعی IBM برای تحلیل داده‌ها و پشتیبانی کسب‌وکارها.</p>
         </div>
     </div>
-<footer>
-    <p> <strong>  طراحی شده توسط محمدرضا راجی </strong></p>
-</footer>
-
-
 </body>
 </html>
