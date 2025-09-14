@@ -1,278 +1,326 @@
+
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="هوشیار - پلتفرم جامع هوش مصنوعی">
-    <meta name="keywords" content="هوشیار, هوش مصنوعی, AI, دستیار صوتی, تبدیل متن به صوت">
+    <meta name="description" content="هوشیار - مرجع تخصصی هوش مصنوعی">
+    <meta name="keywords" content="هوشیار, هوش مصنوعی, AI, پروژه هوش مصنوعی, اخبار هوش مصنوعی">
     <meta name="author" content="محمدرضا راجی">
-    <title>هوشیار | پلتفرم هوش مصنوعی</title>
+    <title>هوشیار | مرجع تخصصی هوش مصنوعی</title>
     <link href="https://fonts.googleapis.com/css2?family=Yekan+Bakh:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary-color: #6a11cb;
-            --secondary-color: #2575fc;
-            --accent-color: #FFD700;
-            --dark-color: #1a1a2e;
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #ff6b6b;
             --light-color: #f8f9fa;
+            --dark-color: #1a1a2e;
         }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
         body {
             font-family: 'Yekan Bakh', sans-serif;
-            color: var(--light-color);
+            color: var(--dark-color);
             min-height: 100vh;
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
-            background: linear-gradient(-45deg, #6a11cb, #2575fc, #11998e, #b370ff);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            background-color: #f8f9fa;
+            line-height: 1.6;
         }
-        
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
         /* هدر اصلی */
         .main-header {
-            background: rgba(26, 26, 46, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
         }
-        
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            background: linear-gradient(to right, var(--accent-color), #ff8c00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--accent-color);
             display: flex;
             align-items: center;
         }
-        
         .logo i {
             margin-left: 8px;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
         }
-        
         .nav-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
         }
-        
         .nav-links {
             display: flex;
-            gap: 10px;
+            gap: 15px;
         }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--light-color);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 70px;
-            right: 0;
-            width: 100%;
-            background: rgba(26, 26, 46, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            z-index: 999;
-        }
-        
-        .mobile-menu.active {
-            display: block;
-        }
-        
-        .mobile-nav-links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
         .nav-link {
-            color: var(--light-color);
+            color: var(--dark-color);
             text-decoration: none;
             font-size: 1rem;
             font-weight: 500;
-            padding: 0.8rem 1rem;
+            padding: 0.5rem 1rem;
             border-radius: 5px;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
         }
-        
         .nav-link:hover {
             color: var(--accent-color);
-            background: rgba(255, 255, 255, 0.1);
         }
-        
-        .nav-link i {
-            margin-left: 8px;
-            font-size: 1rem;
-        }
-        
         .auth-buttons {
             display: flex;
             gap: 10px;
         }
-        
         .auth-btn {
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 5px;
             font-weight: 500;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
         }
-        
         .login-btn {
             background: transparent;
-            color: var(--light-color);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--dark-color);
+            border: 1px solid var(--dark-color);
         }
-        
         .signup-btn {
             background: var(--accent-color);
-            color: var(--dark-color);
+            color: white;
             border: none;
         }
-        
         .auth-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        
         /* صفحه اصلی */
         .main-page {
             padding-top: 80px;
             flex: 1;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
         }
-        
-        .ai-gif-bg {
+        /* گالری تصاویر - ارتفاع افزایش یافته */
+        .gallery-section {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+        }
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            height: 600px; /* افزایش ارتفاع از 500px به 600px */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .gallery-slide {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            opacity: 0.15;
-            z-index: -1;
+            opacity: 0;
+            transition: opacity 1s ease;
+            background-size: cover;
+            background-position: center;
         }
-        
-        .main-title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(to right, #fff, #d1d1d1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            line-height: 1.3;
-            padding: 0 1rem;
+        .gallery-slide.active {
+            opacity: 1;
         }
-        
-        .main-subtitle {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-            max-width: 800px;
-            line-height: 1.6;
-            opacity: 0.9;
-            padding: 0 1rem;
+        .gallery-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            text-align: center;
         }
-        
-        .typewriter-container {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 1rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            width: 90%;
+        .gallery-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        
-        .typewriter {
+        .gallery-text {
             font-size: 1.2rem;
-            min-height: 2rem;
-            color: var(--accent-color);
-            font-weight: 500;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
-        
-        .scroll-down {
+        .gallery-nav {
             position: absolute;
             bottom: 20px;
-            font-size: 1.5rem;
-            animation: bounce 2s infinite;
-            color: var(--accent-color);
-            cursor: pointer;
-            background: rgba(255, 255, 255, 0.1);
-            width: 50px;
-            height: 50px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
-            align-items: center;
-            justify-content: center;
+            gap: 10px;
+        }
+        .gallery-dot {
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
-        
-        .scroll-down:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
+        .gallery-dot.active {
+            background: var(--accent-color);
+            transform: scale(1.2);
         }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-10px);}
-            60% {transform: translateY(-5px);}
+        /* بخش معرفی */
+        .intro-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            background: white;
         }
-        
-        /* صفحه گالری هوش مصنوعی */
-        .gallery-page, .assistant-page {
+        .intro-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        .intro-title span {
+            color: var(--accent-color);
+        }
+        .intro-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #555;
+            max-width: 800px;
+            line-height: 1.8;
+        }
+        /* بخش موضوعات */
+        .topics-section {
+            background: #f8f9fa;
+            padding: 5rem 2rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+        .section-title span {
+            color: var(--accent-color);
+        }
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .topic-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+        }
+        .topic-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .topic-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .topic-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .topic-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        .topic-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #666;
+        }
+        /* بخش پروژه‌ها */
+        .projects-section {
+            background: white;
+            padding: 5rem 2rem;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .project-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .project-content {
+            padding: 1.5rem;
+        }
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        .project-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        /* استایل‌های جدید برای صفحات دیگر */
+        .ai-page, .assistant-page, .news-page, .about-page {
             display: none;
             padding-top: 80px;
             flex: 1;
+            background: linear-gradient(-45deg, #6a11cb, #2575fc, #11998e, #b370ff);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: white;
         }
-        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
         .back-btn {
             position: fixed;
-            top: 15px;
+            top: 90px;
             left: 15px;
-            background: rgba(255, 215, 0, 0.9);
-            color: var(--dark-color);
+            background: rgba(255, 107, 107, 0.9);
+            color: white;
             border: none;
             padding: 10px 20px;
             border-radius: 50px;
@@ -282,48 +330,41 @@
             font-size: 0.9rem;
             display: flex;
             align-items: center;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
             transition: all 0.3s ease;
         }
-        
         .back-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
         }
-        
         .back-btn i {
             margin-right: 5px;
         }
-        
-        /* استایل‌های صفحه گالری */
-        .gallery-header {
+        /* استایل‌های صفحه هوش مصنوعی */
+        .ai-header {
             padding: 2rem 1rem;
             text-align: center;
         }
-        
-        .gallery-header h1 {
+        .ai-header h1 {
             font-size: 1.8rem;
             color: var(--accent-color);
             margin-bottom: 0.8rem;
         }
-        
-        .gallery-header p {
+        .ai-header p {
             font-size: 1rem;
             opacity: 0.9;
             max-width: 800px;
             margin: 0 auto;
             padding: 0 1rem;
         }
-        
         .ai-container {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             padding: 1rem;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
         .ai-card {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
@@ -334,12 +375,10 @@
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
         .ai-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
         }
-        
         .ai-btn {
             background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             color: white;
@@ -354,19 +393,16 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        
         .ai-btn:hover {
             background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
             box-shadow: 0 8px 25px rgba(106, 17, 203, 0.6);
         }
-        
         .ai-desc {
             font-size: 0.9rem;
             margin-top: 1rem;
             line-height: 1.6;
             opacity: 0.9;
         }
-        
         /* صفحه دستیار صوتی */
         .assistant-content {
             max-width: 800px;
@@ -378,19 +414,16 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
         }
-        
         .assistant-content h2 {
             font-size: 1.8rem;
             color: var(--accent-color);
             margin-bottom: 1rem;
         }
-        
         .assistant-content p {
             font-size: 1rem;
             line-height: 1.6;
             margin-bottom: 1.5rem;
         }
-        
         .download-btn {
             background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             color: white;
@@ -407,20 +440,17 @@
             text-decoration: none;
             margin: 0.5rem;
         }
-        
         .download-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(106, 17, 203, 0.7);
         }
-        
         .download-btn i {
             margin-left: 8px;
             font-size: 1.2rem;
         }
-        
         .about-btn {
             background: rgba(255, 255, 255, 0.1);
-            color: var(--light-color);
+            color: white;
             padding: 0.8rem 1.5rem;
             border-radius: 50px;
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -431,106 +461,123 @@
             display: inline-block;
             margin-top: 0.8rem;
         }
-        
         .about-btn:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateY(-3px);
         }
-        
         /* فوتر */
         footer {
-            background: rgba(26, 26, 46, 0.8);
-            padding: 1rem;
+            background: var(--dark-color);
+            padding: 3rem 2rem;
             text-align: center;
-            margin-top: auto;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
         }
-        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
         .footer-text {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             opacity: 0.8;
         }
-        
         .designer-name {
             color: var(--accent-color);
             font-weight: 500;
         }
-        
-        /* انیمیشن‌ها */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .main-title {
-            animation: fadeIn 1s ease-out forwards;
-        }
-        
-        .main-subtitle {
-            animation: fadeIn 1s ease-out 0.3s both;
-        }
-        
-        .typewriter-container {
-            animation: fadeIn 1s ease-out 0.6s both;
-        }
-        
-        .scroll-down {
-            animation: fadeIn 1s ease-out 0.9s both;
-        }
-        
         /* رسپانسیو */
-        @media (max-width: 768px) {
+        @media (max-width: 1200px) {
+            .gallery-container {
+                height: 550px; /* افزایش ارتفاع برای صفحه‌های متوسط */
+                max-width: 1000px;
+            }
+        }
+        @media (max-width: 968px) {
             .nav-links {
                 display: none;
             }
-            
-            .mobile-menu-btn {
-                display: block;
+            .gallery-container {
+                height: 500px; /* افزایش ارتفاع برای تبلت */
+                max-width: 800px;
             }
-            
-            .auth-buttons {
-                display: none;
+            .gallery-title {
+                font-size: 2rem;
             }
-            
-            .main-title {
-                font-size: 1.8rem;
+            .intro-title {
+                font-size: 2rem;
             }
-            
-            .main-subtitle {
-                font-size: 0.9rem;
-            }
-            
-            .typewriter {
-                font-size: 1rem;
-            }
-            
             .ai-container {
                 grid-template-columns: 1fr;
-                padding: 0.5rem;
             }
-            
+        }
+        @media (max-width: 768px) {
+            .main-header {
+                padding: 1rem;
+            }
+            .logo {
+                font-size: 1.5rem;
+            }
+            .intro-title {
+                font-size: 1.8rem;
+            }
+            .intro-text {
+                font-size: 1rem;
+            }
+            .topics-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .gallery-container {
+                height: 450px; /* افزایش ارتفاع برای موبایل */
+                max-width: 100%;
+                border-radius: 10px;
+            }
+            .gallery-title {
+                font-size: 1.8rem;
+            }
+            .gallery-text {
+                font-size: 1rem;
+            }
+            .gallery-content {
+                padding: 1.5rem;
+            }
+            .back-btn {
+                top: 80px;
+                left: 10px;
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery-container {
+                height: 400px; /* افزایش ارتفاع برای موبایل‌های کوچک */
+            }
+            .gallery-title {
+                font-size: 1.5rem;
+            }
+            .gallery-text {
+                font-size: 0.9rem;
+            }
+            .intro-section, .topics-section, .projects-section {
+                padding: 3rem 1rem;
+            }
             .assistant-content {
                 padding: 1rem;
                 margin: 1rem;
             }
-            
-            .assistant-content h2 {
-                font-size: 1.5rem;
-            }
-            
-            .assistant-content p {
-                font-size: 0.9rem;
-            }
-            
             .download-btn {
                 padding: 0.8rem 1.5rem;
                 font-size: 1rem;
-            }
-        }
-        
-        @media (min-width: 769px) {
-            .mobile-menu {
-                display: none !important;
             }
         }
     </style>
@@ -542,107 +589,138 @@
             <span>هوشیار</span>
             <i class="fas fa-robot"></i>
         </div>
-        
         <div class="nav-container">
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-            
             <nav class="nav-links">
-                <a href="#" class="nav-link" onclick="showMainPage()">
-                    <i class="fas fa-home"></i>
-                    خانه
-                </a>
-                <a href="#" class="nav-link" onclick="showGallery()">
-                    <i class="fas fa-brain"></i>
-                    هوش مصنوعی
-                </a>
-                <a href="#" class="nav-link" onclick="showAssistantPage()">
-                    <i class="fas fa-microphone-alt"></i>
-                    دستیار صوتی
-                </a>
-                <a href="#" class="nav-link" onclick="showAboutPage()">
-                    <i class="fas fa-info-circle"></i>
-                    درباره ما
-                </a>
+                <a href="#" class="nav-link" onclick="showMainPage()">خانه</a>
+                <a href="#" class="nav-link" onclick="showAIPage()">هوش مصنوعی</a>
+                <a href="#" class="nav-link" onclick="showAssistantPage()">دستیار صوتی</a>
+                <a href="#" class="nav-link" onclick="showNewsPage()">اخبار</a>
+                <a href="#" class="nav-link" onclick="showAboutPage()">درباره ما</a>
             </nav>
-            
             <div class="auth-buttons">
-                <a href="#" class="auth-btn login-btn">
-                    <i class="fas fa-sign-in-alt"></i>
-                    ورود
-                </a>
-                <a href="#" class="auth-btn signup-btn">
-                    <i class="fas fa-user-plus"></i>
-                    ثبت نام
-                </a>
-            </div>
-        </div>
-        
-        <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-nav-links">
-                <a href="#" class="nav-link" onclick="showMainPage(); toggleMobileMenu()">
-                    <i class="fas fa-home"></i>
-                    خانه
-                </a>
-                <a href="#" class="nav-link" onclick="showGallery(); toggleMobileMenu()">
-                    <i class="fas fa-brain"></i>
-                    هوش مصنوعی
-                </a>
-                <a href="#" class="nav-link" onclick="showAssistantPage(); toggleMobileMenu()">
-                    <i class="fas fa-microphone-alt"></i>
-                    دستیار صوتی
-                </a>
-                <a href="#" class="nav-link" onclick="showAboutPage(); toggleMobileMenu()">
-                    <i class="fas fa-info-circle"></i>
-                    درباره ما
-                </a>
-                <div style="display: flex; gap: 10px; margin-top: 10px;">
-                    <a href="#" class="auth-btn login-btn" style="flex: 1; text-align: center;" onclick="toggleMobileMenu()">
-                        <i class="fas fa-sign-in-alt"></i>
-                        ورود
-                    </a>
-                    <a href="#" class="auth-btn signup-btn" style="flex: 1; text-align: center;" onclick="toggleMobileMenu()">
-                        <i class="fas fa-user-plus"></i>
-                        ثبت نام
-                    </a>
-                </div>
+                <a href="#" class="auth-btn login-btn">ورود</a>
+                <a href="#" class="auth-btn signup-btn">ثبت نام</a>
             </div>
         </div>
     </header>
-
     <!-- صفحه اصلی -->
     <div class="main-page" id="mainPage">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDFqY2V1dGJ4b2V5Y3BqZ2Z6Z2Z6Z2Z6Z2Z6Z3c3MzR5eHl2ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RLVHPJJv7jY1q/giphy.gif" alt="AI Background" class="ai-gif-bg">
-        
-        <h1 class="main-title">به دنیای هوش مصنوعی خوش آمدید</h1>
-        <p class="main-subtitle">
-            هوشیار، دروازه‌ای به سوی آینده‌ای هوشمند
-            <br>
-            تجربه‌ای متفاوت از فناوری‌های پیشرفته هوش مصنوعی
-        </p>
-        
-        <div class="typewriter-container">
-            <p class="typewriter">پلتفرم جامع هوش مصنوعی برای <span class="typed-text"></span></p>
-        </div>
-        
-        <div class="scroll-down" onclick="scrollToContent()">
-            <i class="fas fa-chevron-down"></i>
-        </div>
+        <!-- گالری تصاویر با ارتفاع افزایش یافته -->
+        <section class="gallery-section">
+            <div class="gallery-container">
+                <div class="gallery-slide active" style="background-image: url('A.jpg');">
+                    <div class="gallery-content">
+                        <h2 class="gallery-title">دنیای هوش مصنوعی</h2>
+                        <p class="gallery-text">کشف قابلیت‌های بی‌نظیر هوش مصنوعی در زندگی روزمره</p>
+                    </div>
+                </div>
+                <div class="gallery-slide" style="background-image: url('25.jpg');">
+                    <div class="gallery-content">
+                        <h2 class="gallery-title">رباتیک هوشمند</h2>
+                        <p class="gallery-text">ترکیب رباتیک و هوش مصنوعی برای ایجاد سیستم‌های خودکار</p>
+                    </div>
+                </div>
+                <div class="gallery-slide" style="background-image: url('1.jpg');">
+                    <div class="gallery-content">
+                        <h2 class="gallery-title">شبکه عصبی</h2>
+                        <p class="gallery-text">آشنایی با شبکه‌های عصبی و الگوریتم‌های یادگیری عمیق</p>
+                    </div>
+                </div>
+                <div class="gallery-slide" style="background-image: url('85.jpg');">
+                    <div class="gallery-content">
+                        <h2 class="gallery-title">یادگیری ماشین</h2>
+                        <p class="gallery-text">کشف الگوها و ساخت مدل‌های پیش‌بینیکننده با یادگیری ماشین</p>
+                    </div>
+                </div>
+                <div class="gallery-slide" style="background-image: url('45.webp');">
+                    <div class="gallery-content">
+                        <h2 class="gallery-title">پردازش زبان طبیعی</h2>
+                        <p class="gallery-text">درک و پردازش زبان انسان توسط هوش مصنوعی</p>
+                    </div>
+                </div>
+                <div class="gallery-nav">
+                    <div class="gallery-dot active" onclick="showGallerySlide(0)"></div>
+                    <div class="gallery-dot" onclick="showGallerySlide(1)"></div>
+                    <div class="gallery-dot" onclick="showGallerySlide(2)"></div>
+                    <div class="gallery-dot" onclick="showGallerySlide(3)"></div>
+                    <div class="gallery-dot" onclick="showGallerySlide(4)"></div>
+                </div>
+            </div>
+        </section>
+        <!-- بخش معرفی -->
+        <section class="intro-section">
+            <h1 class="intro-title">به <span>هوشیار</span> خوش آمدید</h1>
+            <p class="intro-text">
+                هوشیار مرجعی تخصصی برای علاقه‌مندان به هوش مصنوعی است. در اینجا می‌توانید با جدیدترین ابزارها،
+                پروژه‌های innovativ و آخرین اخبار حوزه هوش مصنوعی آشنا شوید. ما به شما کمک می‌کنیم
+                تا در دنیای پیچیده و هیجان‌انگیز هوش مصنوعی به راحتی navigat کنید.
+            </p>
+        </section>
+        <!-- بخش موضوعات -->
+        <section class="topics-section">
+            <h2 class="section-title">موضوعات <span>هوش مصنوعی</span></h2>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <img src="5.jpg" alt="شبکه عصبی" class="topic-image">
+                    <div class="topic-content">
+                        <h3 class="topic-title">شبکه عصبی</h3>
+                        <p class="topic-text">آشنایی با الگوریتم‌ها و تکنیک‌های شبکه‌های عصبی و کاربردهای آن</p>
+                    </div>
+                </div>
+                <div class="topic-card">
+                    <img src="b.webp" alt="پردازش تصویر" class="topic-image">
+                    <div class="topic-content">
+                        <h3 class="topic-title">پردازش تصویر</h3>
+                        <p class="topic-text">سیستم‌های پیشرفته پردازش و تحلیل تصاویر با هوش مصنوعی</p>
+                    </div>
+                </div>
+                <div class="topic-card">
+                    <img src="79548.jpg" alt="رباتیک" class="topic-image">
+                    <div class="topic-content">
+                        <h3 class="topic-title">دنیای رباتیک</h3>
+                        <p class="topic-text">فناوری‌های رباتیک پیشرفته و هوش مصنوعی</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- بخش پروژه‌ها -->
+        <section class="projects-section">
+            <h2 class="section-title">پروژه‌های <span>برجسته</span></h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="reza.jpg" alt="پروژه هوش مصنوعی" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">دستیار صوتی هوشیار</h3>
+                        <p class="project-description">پروژه پیشرفته دستیار صوتی با قابلیت درک زبان فارسی</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="ai.png" alt="پروژه هوش مصنوعی" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">پردازش زبان طبیعی</h3>
+                        <p class="project-description">سیستم پردازش زبان طبیعی برای تحلیل متون فارسی</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="5.jpg" alt="پروژه هوش مصنوعی" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">شبکه عصبی هوشمند</h3>
+                        <p class="project-description">شبکه عصبی پیشرفته برای تشخیص الگو و پردازش داده‌ها</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-    
-    <!-- صفحه گالری هوش مصنوعی -->
-    <div class="gallery-page" id="galleryPage">
+    <!-- صفحه هوش مصنوعی -->
+    <div class="ai-page" id="aiPage">
         <button class="back-btn" onclick="showMainPage()">
             <i class="fas fa-arrow-left"></i>
             بازگشت
         </button>
-        
-        <div class="gallery-header">
+        <div class="ai-header">
             <h1>ابزارهای هوش مصنوعی</h1>
             <p>مجموعه‌ای از پیشرفته‌ترین ابزارهای هوش مصنوعی جهان در دسترس شماست</p>
         </div>
-
         <div class="ai-container">
             <div class="ai-card">
                 <button class="ai-btn" onclick="window.location.href='https://openai.com'">Chat GPT</button>
@@ -678,14 +756,12 @@
             </div>
         </div>
     </div>
-    
     <!-- صفحه دستیار صوتی -->
     <div class="assistant-page" id="assistantPage">
         <button class="back-btn" onclick="showMainPage()">
             <i class="fas fa-arrow-left"></i>
             بازگشت
         </button>
-        
         <div class="assistant-content">
             <h2>دستیار صوتی هوشمند</h2>
             <p>
@@ -693,37 +769,43 @@
                 <br>
                 این نرم‌افزار با الگوریتم‌های پیشرفته طراحی شده و به طور خاص برای زبان فارسی بهینه‌سازی شده است.
                 <br>
-                نسخه فعلی: 1.0 | حجم فایل81.7MB
+                نسخه فعلی: 1.0 | حجم فایل: 81.7MB
             </p>
-            
             <a href="https://drive.google.com/file/d/1BIWjkzyw7c6wkP_8jljNfOijSPOwR5hR/view?usp=drive_link" class="download-btn" target="_blank">
                 <i class="fas fa-download"></i>
                 دانلود نسخه ویندوز
             </a>
-            
             <a href="#" class="about-btn" onclick="showAboutPage()">
                 <i class="fas fa-info-circle"></i>
                 درباره ما
             </a>
         </div>
     </div>
-    
-    <!-- صفحه درباره ما -->
-    <div class="about-page" id="aboutPage" style="display: none; padding-top: 80px; flex: 1;">
-        <button class="back-btn" onclick="history.back()">
+    <!-- صفحه اخبار -->
+    <div class="news-page" id="newsPage">
+        <button class="back-btn" onclick="showMainPage()">
             <i class="fas fa-arrow-left"></i>
             بازگشت
         </button>
-        
+        <div class="assistant-content">
+            <h2>اخبار هوش مصنوعی</h2>
+            <p>
+                به زودی بخش اخبار هوش مصنوعی راه‌اندازی خواهد شد.
+                <br>
+                در این بخش آخرین اخبار و تحولات دنیای هوش مصنوعی را دنبال کنید.
+            </p>
+        </div>
+    </div>
+    <!-- صفحه درباره ما -->
+    <div class="about-page" id="aboutPage">
         <div class="assistant-content">
             <h2>درباره هوشیار</h2>
             <p>
                 <br><br>
                 مأموریت ما توسعه و ارائه راهکارهای هوش مصنوعی متناسب با نیازهای کاربران فارسی زبان است.
                 <br><br>
-                محصولات ما شامل مجموعه‌ای از بهترین ابزارهای جهانی هوش مصنوعی به همراه راهکارهای اختصاصی طراحی شده توسط تیم ما می‌باشد.
+                محصولات мы شامل مجموعه‌ای از بهترین ابزارهای جهانی هوش مصنوعی به همراه راهکارهای اختصاصی طراحی شده توسط تیم ما می‌باشد.
             </p>
-            
             <h3 style="margin-top: 1.5rem; color: var(--accent-color);">تماس با ما</h3>
             <p>
                 ایمیل: raji.tech.ai.101@gmail.com
@@ -732,108 +814,91 @@
             </p>
         </div>
     </div>
-    
     <!-- فوتر -->
     <footer>
-        <p class="footer-text">
-            تمام حقوق برای <span class="designer-name">هوشیار</span> محفوظ است | طراحی و توسعه توسط 
-            <span class="designer-name">محمدرضا راجی</span>
-        </p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span>هوشیار</span>
+                <i class="fas fa-robot"></i>
+            </div>
+            <p class="footer-text">
+                تمام حقوق برای <span class="designer-name">هوشیار</span> محفوظ است | طراحی و توسعه توسط
+                <span class="designer-name">محمدرضا راجی</span>
+            </p>
+        </div>
     </footer>
-    
     <script>
-        // تابع برای نمایش/مخفی کردن منوی موبایل
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('active');
+        // گالری تصاویر
+        let currentGallerySlide = 0;
+        const gallerySlides = document.querySelectorAll('.gallery-slide');
+        const galleryDots = document.querySelectorAll('.gallery-dot');
+        function showGallerySlide(n) {
+            gallerySlides[currentGallerySlide].classList.remove('active');
+            galleryDots[currentGallerySlide].classList.remove('active');
+            currentGallerySlide = n;
+            gallerySlides[currentGallerySlide].classList.add('active');
+            galleryDots[currentGallerySlide].classList.add('active');
         }
-        
-        // تابع برای نمایش صفحه اصلی
+        // تغییر خودکار گالری
+        function autoGallerySlide() {
+            let nextSlide = (currentGallerySlide + 1) % gallerySlides.length;
+            showGallerySlide(nextSlide);
+        }
+        // شروع تغییر خودکار اسلایدها
+        let galleryInterval = setInterval(autoGallerySlide, 5000);
+        // توقف گالری وقتی کاربر روی آن هاور می‌کند
+        const gallery = document.querySelector('.gallery-container');
+        gallery.addEventListener('mouseenter', () => {
+            clearInterval(galleryInterval);
+        });
+        gallery.addEventListener('mouseleave', () => {
+            galleryInterval = setInterval(autoGallerySlide, 5000);
+        });
+        // شروع گالری
+        document.addEventListener("DOMContentLoaded", function() {
+            showGallerySlide(0);
+        });
+        // توابع نمایش صفحات
         function showMainPage() {
             document.getElementById('mainPage').style.display = 'flex';
-            document.getElementById('galleryPage').style.display = 'none';
+            document.getElementById('aiPage').style.display = 'none';
             document.getElementById('assistantPage').style.display = 'none';
+            document.getElementById('newsPage').style.display = 'none';
             document.getElementById('aboutPage').style.display = 'none';
             window.scrollTo(0, 0);
         }
-        
-        // تابع برای نمایش صفحه گالری
-        function showGallery() {
+        function showAIPage() {
             document.getElementById('mainPage').style.display = 'none';
-            document.getElementById('galleryPage').style.display = 'block';
+            document.getElementById('aiPage').style.display = 'block';
             document.getElementById('assistantPage').style.display = 'none';
+            document.getElementById('newsPage').style.display = 'none';
             document.getElementById('aboutPage').style.display = 'none';
             window.scrollTo(0, 0);
         }
-        
-        // تابع برای نمایش صفحه دستیار صوتی
         function showAssistantPage() {
             document.getElementById('mainPage').style.display = 'none';
-            document.getElementById('galleryPage').style.display = 'none';
+            document.getElementById('aiPage').style.display = 'none';
             document.getElementById('assistantPage').style.display = 'block';
+            document.getElementById('newsPage').style.display = 'none';
             document.getElementById('aboutPage').style.display = 'none';
             window.scrollTo(0, 0);
         }
-        
-        // تابع برای نمایش صفحه درباره ما
+        function showNewsPage() {
+            document.getElementById('mainPage').style.display = 'none';
+            document.getElementById('aiPage').style.display = 'none';
+            document.getElementById('assistantPage').style.display = 'none';
+            document.getElementById('newsPage').style.display = 'block';
+            document.getElementById('aboutPage').style.display = 'none';
+            window.scrollTo(0, 0);
+        }
         function showAboutPage() {
             document.getElementById('mainPage').style.display = 'none';
-            document.getElementById('galleryPage').style.display = 'none';
+            document.getElementById('aiPage').style.display = 'none';
             document.getElementById('assistantPage').style.display = 'none';
+            document.getElementById('newsPage').style.display = 'none';
             document.getElementById('aboutPage').style.display = 'block';
             window.scrollTo(0, 0);
         }
-        
-        // تابع برای اسکرول به پایین
-        function scrollToContent() {
-            window.scrollBy({
-                top: window.innerHeight - 100,
-                behavior: 'smooth'
-            });
-        }
-        
-        // تایپ رایتر
-        const typedTextSpan = document.querySelector(".typed-text");
-        const textArray = [
-            "تبدیل متن به گفتار طبیعی",
-            "پردازش زبان فارسی",
-            "یادگیری ماشین پیشرفته",
-            "هوش مصنوعی اختصاصی",
-            "راهکارهای نوآورانه"
-        ];
-        const typingDelay = 100;
-        const erasingDelay = 50;
-        const newTextDelay = 1500;
-        let textArrayIndex = 0;
-        let charIndex = 0;
-
-        function type() {
-            if (charIndex < textArray[textArrayIndex].length) {
-                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-                charIndex++;
-                setTimeout(type, typingDelay);
-            } 
-            else {
-                setTimeout(erase, newTextDelay);
-            }
-        }
-
-        function erase() {
-            if (charIndex > 0) {
-                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
-                charIndex--;
-                setTimeout(erase, erasingDelay);
-            } 
-            else {
-                textArrayIndex++;
-                if(textArrayIndex>=textArray.length) textArrayIndex=0;
-                setTimeout(type, typingDelay + 1100);
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            setTimeout(type, newTextDelay + 250);
-        });
     </script>
 </body>
 </html>
